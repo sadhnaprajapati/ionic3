@@ -1,0 +1,11 @@
+{
+  "name": "sensenuts",
+  "integrations": {},
+  "type": "ionic-angular",
+  "proxies": [
+    {
+        "path": "/api",
+        "proxyUrl": "http://api.steampowered.com"
+    }
+]
+}

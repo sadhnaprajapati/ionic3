@@ -1,0 +1,33 @@
+page-login {
+    ion-content{
+        background-image:url("../assets/imgs/background.jpg") !important;
+    }
+    
+    .background-img{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .login-form{
+        margin-top: 20vh;
+    }
+    ion-input{
+        width: 100%;
+        padding: 4px;
+        background: transparent;
+        color: #fff;
+    }
+    .item-md{
+        background: transparent
+    }
+    .toolbar-title{
+        color: #fff;
+    }
+    #register{
+        background: #11eca0;color: #000
+    }
+}

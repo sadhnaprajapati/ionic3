@@ -1,0 +1,41 @@
+<ion-header hideBackButton>
+  <ion-navbar>
+    <ion-buttons end>
+        <button ion-button icon-only >
+          <ion-icon name="notifications"></ion-icon>
+        </button>
+      </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Form</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form #blogForm="ngForm" (ngSubmit)="newBlog()">
+    <ion-list>
+      <ion-item>
+          <ion-label floating>UserId</ion-label>
+          <ion-input type="text" name="userId" [(ngModel)]="userId" required></ion-input>
+      </ion-item>
+        
+      <ion-item>
+          <ion-label floating>Title</ion-label>
+          <ion-input type="text" name="title" [(ngModel)]="title"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Body</ion-label>
+          <ion-textarea  name="body" [(ngModel)]="body"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+      </ion-item>
+      <ion-item>
+          <button ion-button full type="submit" color="secondary" [disabled]="!blogForm.form.valid">Save</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

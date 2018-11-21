@@ -1,0 +1,36 @@
+<ion-content padding text-center class="background">
+  <div class="login-form">
+    <ion-title>Login To Your Account</ion-title>
+    <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" [(ngModel)]="uname" name="uname" required></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="pass" name="pass" required=""></ion-input>
+        </ion-item>      
+      
+        <ion-row>
+          <ion-col text-center>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+            <button ion-button class="submit-btn" full type="submit" block color="secondary" [disabled]="!loginForm.form.valid">
+              Sign in
+            </button>
+          </ion-col>
+        </ion-row>
+      
+        <ion-row>
+          <ion-col text-center>
+            <button ion-button clear color="light" (click)="onForgotPassword()">
+              Forgot your password?
+            </button>
+          </ion-col>
+        </ion-row>
+      
+      </form>
+  </div>
+  
+</ion-content>

@@ -1,0 +1,187 @@
+<ion-header hideBackButton>
+    <ion-navbar>
+      <ion-buttons end >
+          <button ion-button icon-only >
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+        </ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Admin</ion-title>
+      
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-row>
+      <ion-col class="col-md-4 col-sm-12 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon" style="background: #00c0ef">
+                <ion-icon name="cog" center ></ion-icon>
+          </span>
+          <div class="info-box-content" end>
+              <p>CPU Traffic</p>
+              <h4>90%</h4>
+          </div>
+        </div>
+      </ion-col> 
+      <ion-col class="col-md-4 col-sm-12 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon" style="background: red">
+                <ion-icon name="logo-googleplus"></ion-icon>
+            </span>
+            <div class="info-box-content" end>
+                <p>Likes</p>
+                <h4>40400</h4>
+            </div>
+          </div>
+        </ion-col> 
+        <ion-col class="col-md-4 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon" style="background: green">
+                  <ion-icon name="cart"></ion-icon>
+              </span>
+              <div class="info-box-content" end>
+                  <p>Store</p>
+                  <h4>360</h4>
+              </div>
+            </div>
+          </ion-col> 
+    </ion-row>
+  
+    <ion-card>
+      <ion-card-header>Monthly Recap Report</ion-card-header>
+      <ion-card-content>
+          <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="users">
+      <ion-card-header>Latest users</ion-card-header>
+      <ion-card-content>
+        <ion-row>
+          <ion-col center>
+            <ion-avatar item-start>
+              <img src="../assets/imgs/user1-128x128.jpg">
+            </ion-avatar>
+            <a class="users-list-name" href="#">Alexander Pierce</a>
+          </ion-col>
+          <ion-col center>
+              <ion-avatar item-start>
+                  <img src="../assets/imgs/user2-160x160.jpg">
+              </ion-avatar>
+              <a class="users-list-name" href="#">Norman</a>
+          </ion-col>
+          <ion-col center>
+              <ion-avatar item-start>
+                  <img src="../assets/imgs/user3-128x128.jpg">
+              </ion-avatar>
+              <a class="users-list-name" href="#">Jane</a>
+          </ion-col>
+          <ion-col center>
+              <ion-avatar item-start>
+                  <img src="../assets/imgs/user4-128x128.jpg">
+              </ion-avatar>
+              <a class="users-list-name" href="#">John</a>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col center>
+                <ion-avatar item-start>
+                    <img src="../assets/imgs/user5-128x128.jpg">
+                </ion-avatar>
+                <a class="users-list-name" href="#">Wick</a>
+            </ion-col>
+            <ion-col center>
+                <ion-avatar item-start>
+                    <img src="../assets/imgs/user6-128x128.jpg">
+                </ion-avatar>
+                <a class="users-list-name" href="#">Alexander Pierce</a>
+            </ion-col>
+            <ion-col center>
+                <ion-avatar item-start>
+                    <img src="../assets/imgs/user7-128x128.jpg">
+                </ion-avatar>
+                <a class="users-list-name" href="#">Sarah</a>
+            </ion-col>
+            <ion-col center>
+                <ion-avatar item-start>
+                    <img src="../assets/imgs/user8-128x128.jpg">
+                </ion-avatar>
+                <a class="users-list-name" href="#">Nedia</a>
+            </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="ion-table">
+      <ion-card-header >Latest Information</ion-card-header>
+      <ion-card-content>
+        <ion-row header class="header">
+          <ion-col>Id</ion-col>
+          <ion-col>Title</ion-col>
+          <ion-col>Completed</ion-col>
+          <ion-col>Id</ion-col>
+          <ion-col>Title</ion-col>
+          <ion-col>Completed</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let todo of todos|slice:0:10;">
+          <ion-col>{{todo.id}}</ion-col>
+          <ion-col>{{todo.title}}</ion-col>
+          <ion-col>{{todo.completed}}</ion-col>
+          <ion-col>{{todo.id}}</ion-col>
+          <ion-col>{{todo.title}}</ion-col>
+          <ion-col>{{todo.completed}}</ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-segment [(ngModel)]="relationship" color="primary">
+            <ion-segment-button value="friends">Friends</ion-segment-button>
+            <ion-segment-button value="enemies">Enemies</ion-segment-button>
+        </ion-segment>
+        <div [ngSwitch]="relationship">
+            <ion-list *ngSwitchCase="'friends'">
+                <ion-item>
+                        <ion-thumbnail item-start>
+                            <img src="../assets/imgs/user1-128x128.jpg">
+                        </ion-thumbnail>
+                        <h1>herry</h1>
+                </ion-item>
+                <ion-item>
+                        <ion-thumbnail item-start>
+                            <img src="../assets/imgs/user3-128x128.jpg">
+                        </ion-thumbnail>
+                        <h1>herry</h1>
+                </ion-item>
+                <ion-item>
+                        <ion-thumbnail item-start>
+                            <img src="../assets/imgs/user4-128x128.jpg">
+                        </ion-thumbnail>
+                        <h1>herry</h1>
+                </ion-item>
+            </ion-list>
+            <ion-list *ngSwitchCase="'enemies'">
+                <ion-item>
+                    <ion-thumbnail item-start>
+                        <img src="../assets/imgs/user5-128x128.jpg">
+                    </ion-thumbnail>
+                    <h1>herry</h1>
+                </ion-item>
+                <ion-item>
+                        <ion-thumbnail item-start>
+                            <img src="../assets/imgs/user6-128x128.jpg">
+                        </ion-thumbnail>
+                        <h1>herry</h1>
+                </ion-item>
+                <ion-item>
+                        <ion-thumbnail item-start>
+                            <img src="../assets/imgs/user7-128x128.jpg">
+                        </ion-thumbnail>
+                        <h1>herry</h1>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-card>
+    
+  </ion-content>
+  
