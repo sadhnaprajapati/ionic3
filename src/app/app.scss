@@ -1,15 +1,23 @@
-.toolbar-background{
-    background: #424242 !important;color: #fff
+
+.toolbar-background,.sidebar,.sidebar .item{
+    background: #424242 !important;color: #fff;
 }
 .sidebar{
-    background: #fff !important;
-    color: #000;
+    .item{border-bottom: 1px solid #eee;
+    }
     .item-inner{border-bottom: 0px !important}
 }
-.toolbar-title{
-    color: #fff
-}
+
 ion-navbar button{color: #fff !important}
 .content{background: #eee}
-
-.uname{width:40px;height:40px;border-radius: 50%;background: #000}
+.toolbar-title{color: #fff}
+ion-toolbar{
+    .toolbar-title{
+        color: #fff
+    }
+    ion-item{background: none !important;color: #fff;
+    h2{color: #fff}
+    p{color: #bdbdbd}
+    }
+     avatar img{border: 2px solid #ffff;}
+}

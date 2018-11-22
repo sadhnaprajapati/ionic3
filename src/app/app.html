@@ -1,20 +1,25 @@
 <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
-          <ion-buttons end>
-              <button ion-button icon-only >
-                  <ion-title>Admin</ion-title>
-              </button>
-            </ion-buttons>
-          <ion-title class="uname">S</ion-title>
+          <ion-title>Admin</ion-title>
+          <ion-list>
+            <ion-item >
+              <ion-avatar item-left>
+                <img src="../assets/imgs/user1-128x128.jpg">
+              </ion-avatar>
+              <h2>John</h2>
+              <p style="color:#fff">Admin</p>
+            </ion-item>
+          </ion-list>
+          
       </ion-toolbar>
-      <ion-title style="background: #424242">Welcome abc</ion-title>
+      
     </ion-header>
   
     <ion-content class="sidebar">
       <ion-list>
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          <ion-icon [name]="p.icon" item-left></ion-icon>
+          <ion-icon [name]="p.icon" item-right></ion-icon>
           {{p.title}}
         </button>
       </ion-list>

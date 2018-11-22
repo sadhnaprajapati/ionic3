@@ -8,7 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { ChartPage } from '../pages/chart/chart';
 import { LoginPage } from '../pages/login/login';
 import { FormPage } from '../pages/form/form';
-
+import { SliderPage } from '../pages/slider/slider';
 @Component({
   templateUrl: 'app.html'
 })
@@ -28,6 +28,7 @@ export class MyApp {
       { title: 'List', component: ListPage ,icon:'list'},
       { title: 'Chart', component: ChartPage,icon:'stats' },
       { title: 'Form', component: FormPage ,icon:'information-circle'},
+      { title: 'Slider', component: SliderPage ,icon:'information-circle'},
     ];
 
   }

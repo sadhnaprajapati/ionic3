@@ -12,6 +12,7 @@ import { ChartPage } from '../pages/chart/chart';
 import { FormPage } from '../pages/form/form';
 import { UserdetailsPage } from '../pages/userdetails/userdetails';
 import { NotificationPage } from '../pages/notification/notification';
+import { SliderPage } from '../pages/slider/slider';
 import { HttpClientModule} from "@angular/common/http"
 import { DashboardProvider } from '../providers/dashboard/dashboard';
 @NgModule({
@@ -23,7 +24,8 @@ import { DashboardProvider } from '../providers/dashboard/dashboard';
     ChartPage,
     FormPage,
     UserdetailsPage,
-    NotificationPage
+    NotificationPage,
+    SliderPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { DashboardProvider } from '../providers/dashboard/dashboard';
     ChartPage,
     FormPage,
     UserdetailsPage,
-    NotificationPage
+    NotificationPage,SliderPage
   ],
   providers: [
     StatusBar,
