@@ -15,19 +15,46 @@
 
 <ion-content padding>
     <ion-title>Login Form</ion-title>
-    <form #blogForm="ngForm" (ngSubmit)="newBlog()">
+    <form #blogForm="ngForm" (ngSubmit)="newBlog(blogForm.value)">
+    {{blogForm.value | json}}
     <ion-list>
       <ion-item>
           <ion-label floating>Username</ion-label>
-          <ion-input type="text" name="uname" [(ngModel)]="username" required></ion-input>
-      </ion-item>
-        
+          <ion-input type="text" name="uname" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" [(ngModel)]="username" required></ion-input>
+          
+        </ion-item>
+        <small [class.d-none]="name.valid || name.untouched">Name is required </small>
       <ion-item>
           <ion-label floating>Password</ion-label>
-          <ion-input type="text" name="pass" [(ngModel)]="pass"></ion-input>
+          <ion-input type="password" name="pass" [(ngModel)]="pass"></ion-input>
       </ion-item>
       <ion-item>
-          <button ion-button full type="submit" color="primary">Save</button>
+          <ion-label floating>Contact</ion-label>
+          <ion-input type="tel" #contact="ngModel" pattern="^\d{10}$" [class.is-invalid]="contact.invalid && contact.touched" name="phone" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+      
+      <div *ngIf="contact.errors && (contact.invalid || contact.touched)">
+          <small class="text-danger" *ngIf="contact.errors.required">Contact number is required.</small>
+          <small class="text-danger" *ngIf="contact.errors.pattern">Contact number must be 10 digits.</small>
+      </div>
+      
+      <div ngModelGroup="address">
+        <ion-item>
+            <ion-label floating>Street</ion-label>
+            <ion-input type="text" name="street" [(ngModel)]="street" required></ion-input>
+        </ion-item>
+          
+        <ion-item>
+            <ion-label floating>City</ion-label>
+            <ion-input type="text" name="city" [(ngModel)]="city" required></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>State</ion-label>
+            <ion-input type="text" name="state" [(ngModel)]="state" required></ion-input>
+        </ion-item>
+      </div>
+      <ion-item>
+          <button ion-button full type="submit" color="primary" [disabled]="!blogForm.valid">Save</button>
       </ion-item>
     </ion-list>
   </form>

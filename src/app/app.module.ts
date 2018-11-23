@@ -13,8 +13,12 @@ import { FormPage } from '../pages/form/form';
 import { UserdetailsPage } from '../pages/userdetails/userdetails';
 import { NotificationPage } from '../pages/notification/notification';
 import { SliderPage } from '../pages/slider/slider';
+import { AccountPage } from '../pages/account/account';
 import { HttpClientModule} from "@angular/common/http"
 import { DashboardProvider } from '../providers/dashboard/dashboard';
+import { IonicStorageModule } from '@ionic/storage';
+import { TooltipsModule } from 'ionic-tooltips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     MyApp,
@@ -25,12 +29,15 @@ import { DashboardProvider } from '../providers/dashboard/dashboard';
     FormPage,
     UserdetailsPage,
     NotificationPage,
-    SliderPage
+    SliderPage,AccountPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    TooltipsModule,
+    BrowserAnimationsModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -41,7 +48,7 @@ import { DashboardProvider } from '../providers/dashboard/dashboard';
     ChartPage,
     FormPage,
     UserdetailsPage,
-    NotificationPage,SliderPage
+    NotificationPage,SliderPage,AccountPage
   ],
   providers: [
     StatusBar,

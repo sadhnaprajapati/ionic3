@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {HomePage} from '..//home/home'
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -13,35 +14,36 @@ export class LoginPage {
   pass:string;
   error:string;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public http:HttpClient,public storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
   login(){
-    // let headers=new HttpHeaders();
-    // headers.append('Access-Control-Allow-Origin' , '*');
-    // headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-    // headers.append('Accept','application/json');
-    // headers.append('content-type','application/json');
+    
     let data={
       uname:this.uname,pass:this.pass
     }
-    console.log(data)
-    this.http.post("https://sensenuts-ei.com:4001/dashtok",data)
-    .map(res => res)
-    .subscribe(
-    data=>{
-      if(data){
-        this.navCtrl.setRoot(HomePage)
-      }else{
-        this.error="Username and password may be incorrect."
-      }
+    if(this.uname=="admin" && this.pass=="admin"){
+      this.storage.set('uname',this.uname);
+      this.navCtrl.setRoot(HomePage)
+    }else{
+      this.error="Username and password may be incorrect."
+    }
+    // this.http.post("https://sensenuts-ei.com:4001/dashtok",data)
+    // .map(res => res)
+    // .subscribe(
+    // data=>{
+    //   if(data){
+        
+    //   }else{
+    //     this.error="Username and password may be incorrect."
+    //   }
        
-    },
-    error=>{this.error="Username and password may be incorrect."}
-    )
-    // this.navCtrl.setRoot(HomePage)
+    // },
+    // error=>{this.error="Username and password may be incorrect."}
+    // )
+    
   }
 }

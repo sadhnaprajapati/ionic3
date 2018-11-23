@@ -1,0 +1,53 @@
+<ion-header hideBackButton>
+    <ion-navbar>
+      <ion-buttons end >
+          <button ion-button icon-only >
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+        </ion-buttons>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>My Account</ion-title>
+      
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content>
+  <div class="account-header" center>
+      <ion-buttons end >
+          <button ion-button icon-only tooltip="I'm a tooltip below a button">
+            <ion-icon ios="ios-create" md="md-create" ></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-avatar>
+      <img src='../assets/imgs/user1-128x128.jpg'>
+    </ion-avatar>
+    <h2>John</h2>
+    <p>Admin</p>
+    
+    
+  </div>
+  <div class="account-info" padding>
+    <h3 class="account-title">Info</h3>
+    <hr>
+    <ion-list>
+      <ion-item><p>Name : John</p></ion-item>
+      <ion-item><p>Username : John</p></ion-item>
+      <ion-item><p>Email : John12@gmail.com</p></ion-item>
+      <ion-item><p>Contact : +91 6964968492</p></ion-item>
+    </ion-list>
+    <h3 class="account-title">Settings</h3>
+    <hr>
+    <ion-list>
+      <ion-item><p>Delete Account</p></ion-item>
+      <ion-item><p>Change Password</p></ion-item>
+      <ion-item><p>Notifications</p></ion-item>
+      <ion-item><p>Theme</p></ion-item>
+    </ion-list>
+    <p clas="title" style="text-align:center;cursor: pointer;" (click)="logOut()">Logout</p>
+    
+    
+    
+  </div>
+</ion-content>

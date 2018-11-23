@@ -9,6 +9,7 @@ import {UserdetailsPage} from '..//userdetails/userdetails';
 })
 export class ListPage {
   users:any;
+  errorMsg:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public service:DashboardProvider) {
   }
 
@@ -18,7 +19,9 @@ export class ListPage {
   }
   getUsersList(){
     this.service.getUsers()
-    .subscribe(data=>this.users=data)
+    .subscribe(
+      data=>this.users=data,
+      error=>this.errorMsg=error)
   }
   getUserDetails(value){
     this.navCtrl.push(UserdetailsPage,{data:value});

@@ -1,11 +1,13 @@
 {
   "name": "sensenuts",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "proxies": [
     {
-        "path": "/api",
-        "proxyUrl": "http://api.steampowered.com"
+      "path": "/api",
+      "proxyUrl": "http://api.steampowered.com"
     }
-]
+  ]
 }

@@ -14,14 +14,9 @@ export class FormPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FormPage');
+    
   }
-  newBlog(){
-    let headers=new HttpHeaders();
-    headers.append('Content-Type','application/json');
-    let data={userId:this.userId,title:this.title,body:this.body};
-    this.http.post('https://jsonplaceholder.typicode.com/posts',JSON.stringify(data),{headers:headers})
-    .map(res=>res)
-    .subscribe(data=>{console.log(data)})
+  newBlog(value){
+    console.log(value)
   }
 }
