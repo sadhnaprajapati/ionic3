@@ -12,10 +12,9 @@ A simple Ionic 3 dashboard with get requests from a public JSON file. It shows i
 <li>Run <code>npm install</code> to install all dependencies.</li>
 <li>Run <code>ionic serve</code> to start the development environment.</li>
 <li>To build the project run <code>ionic build android</code> or <code>ionic build ios</code>. In order for you to build an iOS app, you need to run on MacOS.</li>
-</ol>
+
 <li>To run the project on Android or ios install DevApp.
-<p>
-<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en">DevApp for android</a></p>
-<p>
-<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">DevApp for ios</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en">DevApp for android</a></p>
+<p><a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">DevApp for ios</a></p>
 <p>Once the app has been installed run <code>run ionic serve -c</code> to run on android/ios device.</p></li>
+</ol>
